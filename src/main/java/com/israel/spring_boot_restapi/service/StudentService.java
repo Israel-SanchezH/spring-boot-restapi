@@ -1,7 +1,13 @@
 package com.israel.spring_boot_restapi.service;
 
+import com.israel.spring_boot_restapi.entity.Student;
+import com.israel.spring_boot_restapi.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class StudentService {
@@ -9,7 +15,7 @@ public class StudentService {
     private StudentRepository studentRepository;
 
     public ResponseEntity<List<Student>> getStudents() {
-        return studentRepository.findAll();
+        return new ResponseEntity<>(studentRepository.findAll(), HttpStatus.OK);
     }
 
 }
