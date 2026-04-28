@@ -1,5 +1,6 @@
 package com.israel.spring_boot_restapi.controller;
 
+import com.israel.spring_boot_restapi.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
