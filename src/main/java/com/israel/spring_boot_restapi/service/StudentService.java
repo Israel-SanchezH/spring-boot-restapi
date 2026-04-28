@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -18,4 +19,7 @@ public class StudentService {
         return new ResponseEntity<>(studentRepository.findAll(), HttpStatus.OK);
     }
 
+    public ResponseEntity<Optional<Student>> getStudent(int id) {
+        return new ResponseEntity<>(studentRepository.findById(id), HttpStatus.OK);
+    }
 }
