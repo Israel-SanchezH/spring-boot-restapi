@@ -22,4 +22,8 @@ public class StudentService {
     public ResponseEntity<Optional<Student>> getStudent(int id) {
         return new ResponseEntity<>(studentRepository.findById(id), HttpStatus.OK);
     }
+
+    public ResponseEntity<Student> addStudent(Student student) {
+        return new ResponseEntity<>(studentRepository.save(student),HttpStatus.OK);
+    }
 }
