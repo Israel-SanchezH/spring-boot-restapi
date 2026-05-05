@@ -30,4 +30,9 @@ public class StudentService {
     public ResponseEntity<Student> updateStudent(Student student) {
         return new ResponseEntity<>(studentRepository.save(student),HttpStatus.OK);
     }
+
+    public ResponseEntity<HttpStatus> deleteStudent(Student student) {
+        studentRepository.delete(student);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
