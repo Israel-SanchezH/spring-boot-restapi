@@ -17,6 +17,11 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
+    @GetMapping("/test")
+    public ResponseEntity<String> testApi(@RequestParam int id, String firstname){
+        return new ResponseEntity<>("id: " + id + " firstname: " + firstname, HttpStatus.OK);
+    }
+
     @GetMapping("/students")
     public ResponseEntity<List<Student>> getStudents(){
         return studentService.getStudents();
