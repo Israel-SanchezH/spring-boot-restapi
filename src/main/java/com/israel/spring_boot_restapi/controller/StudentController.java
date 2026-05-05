@@ -3,6 +3,7 @@ package com.israel.spring_boot_restapi.controller;
 import com.israel.spring_boot_restapi.entity.Student;
 import com.israel.spring_boot_restapi.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,6 +35,11 @@ public class StudentController {
     @PutMapping("/students")
     public ResponseEntity<Student> updateStudent(@RequestBody Student student){
         return studentService.updateStudent(student);
+    }
+
+    @DeleteMapping("/students")
+    public ResponseEntity<HttpStatus> deleteStudent(@RequestBody Student student){
+        return studentService.deleteStudent(student);
     }
 
 }
